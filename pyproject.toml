@@ -26,4 +26,33 @@ distribution = true
 [dependency-groups]
 dev = [
     "pdm-backend>=2.4.7",
+    "black>=25.11.0",
+    "isort>=6.1.0",
+    "flake8>=7.3.0",
 ]
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+
+[tool.black]
+exclude = '''
+/(
+     \.git
+    | \.hg
+    | \.tox
+    | .venv
+    | buck-out
+    | build
+    | dist
+)/
+'''
+
+[tool.pdm.scripts]
+check = { composite = [
+    "isort .",
+    "black .",
+    "flake8 .",
+] }
+
+test = "pytest"
