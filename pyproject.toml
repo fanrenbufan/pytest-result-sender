@@ -1,5 +1,5 @@
 [project]
-name = "pytest-result-sender"
+name = "pytest-result-sender-fanrenbufan"
 version = "0.1.1"
 description = "Default template for PDM package"
 authors = [
