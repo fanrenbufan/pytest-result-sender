@@ -4,6 +4,9 @@ on:
   push:
     tags:
       - '*'
+permissions:
+  id-token: write  # 对于 PyPI 可信发布是必需的
+  contents: read   # 用于检出代码
 
 jobs:
   build-publish:
