@@ -4,14 +4,14 @@ on:
   push:
     tags:
       - '*'
-permissions:
-  id-token: write  # 对于 PyPI 可信发布是必需的
-  contents: read   # 用于检出代码
 
 jobs:
   build-publish:
     name: Build and publish Python 🐍 distributions 📦 to PyPI
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write  # 对于 PyPI 可信发布是必需的
+      contents: read   # 用于检出代码
     steps:
       - uses: actions/checkout@v2
       - name: Set up Python 3.9
